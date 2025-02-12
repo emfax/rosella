@@ -1,0 +1,76 @@
+{
+  "hash": "056876f3",
+  "configHash": "d373dd76",
+  "lockfileHash": "6409428d",
+  "browserHash": "4f22b749",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.5.13_typescript@5.6.2/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "9ff443c9",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.7.0/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "0871a47c",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@11.3.0_vue@3.5.13/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "0e1d8451",
+      "needsInterop": false
+    },
+    "lit": {
+      "src": "../../../../node_modules/.pnpm/lit@3.2.1/node_modules/lit/index.js",
+      "file": "lit.js",
+      "fileHash": "e5dad420",
+      "needsInterop": false
+    },
+    "lit/decorators.js": {
+      "src": "../../../../node_modules/.pnpm/lit@3.2.1/node_modules/lit/decorators.js",
+      "file": "lit_decorators__js.js",
+      "fileHash": "02a09249",
+      "needsInterop": false
+    },
+    "lit/directives/class-map.js": {
+      "src": "../../../../node_modules/.pnpm/lit@3.2.1/node_modules/lit/directives/class-map.js",
+      "file": "lit_directives_class-map__js.js",
+      "fileHash": "7df25ac8",
+      "needsInterop": false
+    },
+    "lit/directives/if-defined.js": {
+      "src": "../../../../node_modules/.pnpm/lit@3.2.1/node_modules/lit/directives/if-defined.js",
+      "file": "lit_directives_if-defined__js.js",
+      "fileHash": "e19240db",
+      "needsInterop": false
+    },
+    "@floating-ui/dom": {
+      "src": "../../../../node_modules/.pnpm/@floating-ui+dom@1.6.13/node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs",
+      "file": "@floating-ui_dom.js",
+      "fileHash": "202f619e",
+      "needsInterop": false
+    },
+    "lit/directives/live.js": {
+      "src": "../../../../node_modules/.pnpm/lit@3.2.1/node_modules/lit/directives/live.js",
+      "file": "lit_directives_live__js.js",
+      "fileHash": "4a114111",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-MJGZEQXP": {
+      "file": "chunk-MJGZEQXP.js"
+    },
+    "chunk-PHAG2OIU": {
+      "file": "chunk-PHAG2OIU.js"
+    },
+    "chunk-QVXVFI5S": {
+      "file": "chunk-QVXVFI5S.js"
+    },
+    "chunk-WJDCJ3DY": {
+      "file": "chunk-WJDCJ3DY.js"
+    }
+  }
+}
