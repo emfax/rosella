@@ -19,8 +19,6 @@ export default class Popover extends RosellaElement {
   @query('slot[name="anchor"]') private anchor!: HTMLSlotElement;
   @query('.popover') private popoverPanel!: HTMLDivElement;
 
-  private _active = false;
-
   /**
    * Activates the positioning logic and shows the popup. When this attribute is removed, the positioning logic is torn
    * down and the popup will be hidden.
