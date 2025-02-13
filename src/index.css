@@ -209,6 +209,10 @@
   color: var(--color-base-800);
 }
 
+.text-base-900 {
+  color: var(--color-base-900);
+}
+
 .text-primary-500 {
   color: var(--color-primary-500);
 }
