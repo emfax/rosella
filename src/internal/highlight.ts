@@ -1,36 +1,27 @@
 import { ReactiveController } from "lit";
 import type Option from "../components/option";
-
-let highlighted: Option | null = null;
+import MenuItem from "../components/menu-item";
 
 export class HighlightController implements ReactiveController {
-  host: Option;
+  host: Option | MenuItem;
   internals: ElementInternals
 
-  constructor(host: Option, internals: ElementInternals) {
+  constructor(host: Option | MenuItem, internals: ElementInternals) {
     (this.host = host).addController(this);
 
     this.internals = internals;
   }
 
-  hostConnected(): void { }
+  hostConnected(): void {
+    this.host.addEventListener('mouseenter', this.highlight);
+    this.host.addEventListener('mouseleave', this.unhighlight);
+  }
 
-  highlight(): void {
-    if (highlighted !== this.host) {
-      highlighted?.unhighlight();
-    }
-
-    highlighted = this.host;
+  private highlight = (): void => {
     this.internals.states.add('--highlight');
   }
 
-  unhighlight(): void {
+  private unhighlight = (): void => {
     this.internals.states.delete('--highlight');
   }
-}
-
-export function unhighlightAll(): void {
-  highlighted?.unhighlight();
-
-  highlighted = null;
 }

@@ -49,22 +49,6 @@ export default class Option extends RosellaElement {
     this.emit('ui-connect')
   }
 
-  highlight() {
-    this.highlightController.highlight();
-  }
-
-  unhighlight() {
-    this.highlightController.unhighlight();
-  }
-
-  private handleMouseEnter() {
-    this.highlightController.highlight();
-  }
-
-  private handleMouseLeave() {
-    this.highlightController.unhighlight();
-  }
-
   private handleDefaultSlotChange() {
     if (this.isInitialized) {
       // When the label changes, tell the controller to update
@@ -102,23 +86,10 @@ export default class Option extends RosellaElement {
 
   render() {
     return html`
-      <div
-        part="base"
-        class=${classMap({
-      option: true,
-      'option--current': this.current,
-      'option--disabled': this.disabled,
-      'option--selected': this.selected,
-      'option--hover': this.hasHover
-    })}
-        @mouseenter=${this.handleMouseEnter}
-        @mouseleave=${this.handleMouseLeave}
-      >
-        <sl-icon part="checked-icon" class="option__check" name="check" library="system" aria-hidden="true"></sl-icon>
-        <slot part="prefix" name="prefix" class="option__prefix"></slot>
-        <slot part="label" class="option__label" @slotchange=${this.handleDefaultSlotChange}></slot>
-        <slot part="suffix" name="suffix" class="option__suffix"></slot>
-      </div>
+      <sl-icon part="checked-icon" class="option__check" name="check" library="system" aria-hidden="true"></sl-icon>
+      <slot part="prefix" name="prefix" class="option__prefix"></slot>
+      <slot part="label" class="option__label" @slotchange=${this.handleDefaultSlotChange}></slot>
+      <slot part="suffix" name="suffix" class="option__suffix"></slot>
     `;
   }
 }

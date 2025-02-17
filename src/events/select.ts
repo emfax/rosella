@@ -1,4 +1,4 @@
-export type UiSelectEvent = CustomEvent<Record<PropertyKey, never>>;
+export type UiSelectEvent = CustomEvent<Record<PropertyKey, any>>;
 
 declare global {
   interface GlobalEventHandlersEventMap {

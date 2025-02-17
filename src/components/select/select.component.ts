@@ -128,7 +128,7 @@ export default class Select extends RosellaElement implements RosellaFormControl
 
           let idx = e.key === 'ArrowDown' ? 0 : -1;
 
-          this.getAllOptions().at(idx)?.highlight();
+          // this.getAllOptions().at(idx)?.highlight();
           break;
 
         case 'Enter':
