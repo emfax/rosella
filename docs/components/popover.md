@@ -12,11 +12,16 @@ tag: ui-popover
 
 ```html
 <div class="mx-auto max-w-xs">
-  <ui-popover active>
-    <ui-button slot="anchor">Button</ui-button>
-    <div>
-        Fuck orft
-    </div>
+  <ui-popover>
+    <ui-button slot="anchor">
+      <span>Button</span>
+      <ui-icon slot="suffix" name="chevronDown"></ui-icon>
+    </ui-button>
+    <ui-menu>
+      <ui-menu-item value="one">One</ui-menu-item>
+      <ui-menu-item value="two">Two</ui-menu-item>
+      <ui-menu-item value="three">Three</ui-menu-item>
+    </ui-menu>
   </ui-popover>
 </div>
 ```

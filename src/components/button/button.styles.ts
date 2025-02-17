@@ -32,6 +32,7 @@ export default css`
   button {
     display: flex;
     align-items: center;
+    gap: var(--spacing-xs);
     justify-content: center;
     outline: none;
     border: none;
@@ -65,7 +66,7 @@ export default css`
   .secondary {
     background-color: var(--color-base-100);
     color: var(--color-base-800);
-    border-color: var(--color-base-300);
+    border-color: var(--color-base-200);
     border-width: var(--border-width);
     border-style: solid;
   }

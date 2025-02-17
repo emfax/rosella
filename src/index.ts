@@ -1,4 +1,5 @@
 export { default as Button } from './components/button';
+export { default as Dropdown } from './components/dropdown';
 export { default as Icon } from './components/icon';
 export { default as Input } from './components/input';
 export { default as Menu } from './components/menu';

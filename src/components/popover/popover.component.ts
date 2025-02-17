@@ -40,7 +40,8 @@ export default class Popover extends RosellaElement {
     if (!this.anchor.assignedElements().length) {
       return;
     }
-    let anchor = this.anchor.assignedElements()[0] as HTMLElement;
+
+    let anchor = this.anchor.assignedElements({ flatten: true })[0] as HTMLElement;
 
     computePosition(anchor, this.popoverPanel, {
       placement: 'bottom-start',
@@ -52,18 +53,30 @@ export default class Popover extends RosellaElement {
       });
     });
 
-    this.popoverPanel.togglePopover();
+    this.popoverPanel.showPopover();
 
     this.popoverPanel.focus({ preventScroll: true });
+  }
+
+  private handleToggle(e: ToggleEvent) {
+    console.log('toggle', e);
+
+    if (e.newState === 'closed') {
+      this.active = false;
+    }
   }
 
   render() {
     return html`
       <slot name="anchor"></slot>
-      <div class="${classMap({
+      <div
+        class="${classMap({
       'popover': true,
       'active': this.active,
-    })}" popover>
+    })}"
+        @toggle=${this.handleToggle}
+        popover
+      >
         <slot></slot>
       </div>
     `;

@@ -7,15 +7,12 @@ export default css`
   }
 
   .popover {
-    background-color: var(--color-base-100);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-base-200);
-    color: var(--color-base-800);
-    font-size: var(--text-sm);
+    background-color: transparent;
+    border: none;
     margin: 0;
+    padding: 0;
     outline: none;
     overflow: hidden;
     position: absolute;
-    min-width: var(--container-4xs);
   }
 `;
