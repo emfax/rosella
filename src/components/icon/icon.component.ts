@@ -9,13 +9,13 @@ const CACHEABLE_ERROR = Symbol();
 const RETRYABLE_ERROR = Symbol();
 type SVGResult = HTMLTemplateResult | SVGElement | typeof RETRYABLE_ERROR | typeof CACHEABLE_ERROR;
 
-let parser: DOMParser;
+// let parser: DOMParser;
 const iconCache = new Map<string, Promise<SVGResult>>();
 
-interface IconSource {
-  url?: string;
-  fromLibrary: boolean;
-}
+// interface IconSource {
+//   url?: string;
+//   fromLibrary: boolean;
+// }
 
 /**
  * @summary Icons are symbols that can be used to represent various options within an application.

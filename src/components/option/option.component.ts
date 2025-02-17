@@ -1,7 +1,6 @@
 import { CSSResultGroup, html } from "lit";
 import RosellaElement from "../../element/rosella-element";
 import { property, state } from "lit/decorators.js";
-import { classMap } from "lit/directives/class-map.js";
 import styles from "./option.styles";
 import { HighlightController } from "../../internal/highlight";
 
@@ -17,6 +16,7 @@ export default class Option extends RosellaElement {
 
   private isInitialized = false;
 
+  // @ts-ignore
   private highlightController: HighlightController;
 
   @state() current = false; // the user has keyed into the option, but hasn't selected it yet (shows a highlight)

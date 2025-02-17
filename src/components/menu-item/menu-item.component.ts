@@ -18,7 +18,7 @@ import RosellaElement from '../../element/rosella-element.js';
 import styles from './menu-item.styles';
 import type { CSSResultGroup, PropertyValues } from 'lit';
 import { SlotOccupiedController } from '../../control/slot.js';
-import { SubmenuController } from './submenu-controller.js';
+// import { SubmenuController } from './submenu-controller.js';
 import { computePosition, flip, offset, shift } from '@floating-ui/dom';
 
 /**
@@ -82,7 +82,7 @@ export default class MenuItem extends RosellaElement {
   @property({ type: Boolean, reflect: true }) disabled = false;
 
   private readonly hasSlotController = new SlotOccupiedController(this, 'submenu');
-  private submenuController: SubmenuController = new SubmenuController(this, this.hasSlotController);
+  // private submenuController: SubmenuController = new SubmenuController(this, this.hasSlotController);
 
   constructor() {
     super();

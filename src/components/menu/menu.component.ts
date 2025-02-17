@@ -4,7 +4,6 @@ import RosellaElement from '../../element/rosella-element.js';
 import styles from './menu.styles';
 import type { CSSResultGroup } from 'lit';
 import MenuItem from '../menu-item';
-import { throttleAndDebounce } from '../../util.js';
 
 export interface MenuSelectEventDetail {
   item: MenuItem;
