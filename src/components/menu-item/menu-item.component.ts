@@ -19,8 +19,6 @@ import styles from './menu-item.styles';
 import type { CSSResultGroup, PropertyValues } from 'lit';
 import { SlotOccupiedController } from '../../control/slot.js';
 import { SubmenuController } from './submenu-controller.js';
-import { classMap } from 'lit/directives/class-map.js';
-import { HighlightController } from '../../internal/highlight.js';
 import { computePosition, flip, offset, shift } from '@floating-ui/dom';
 
 /**
@@ -172,10 +170,10 @@ export default class MenuItem extends RosellaElement {
     }
   };
 
-  private handleMouseOver = (event: MouseEvent) => {
-    this.focus();
-    event.stopPropagation();
-  }
+  // private handleMouseOver = (event: MouseEvent) => {
+  //   this.focus();
+  //   event.stopPropagation();
+  // }
 
   handleCheckedChange() {
     // For proper accessibility, users have to use type="checkbox" to use the checked attribute
@@ -218,8 +216,7 @@ export default class MenuItem extends RosellaElement {
 
   render() {
     const isRtl = false; // this.localize.dir() === 'rtl';
-    const isSubmenuExpanded = this.submenuController.isExpanded();
-
+    // const isSubmenuExpanded = this.submenuController.isExpanded();
 
     return html`
       <div class="menu-item">

@@ -1,5 +1,4 @@
-import { html } from 'lit';
-import { isTemplateResult } from 'lit/directive-helpers.js';
+
 import { property, state } from 'lit/decorators.js';
 import styles from './icon.styles';
 import type { CSSResultGroup, HTMLTemplateResult, PropertyValues } from 'lit';
