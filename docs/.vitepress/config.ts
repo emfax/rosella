@@ -15,7 +15,10 @@ export default async () => {
     title: "Rosella",
     description: "Themed Web Component UI library.",
     themeConfig: { tree },
-    head: [['link', { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }]],
+    head: [
+      ['link', { rel: 'icon', href: '/favicon.svg' }],
+      ['link', { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }]
+    ],
     cleanUrls: true,
     vite: {
       resolve: {
@@ -56,6 +59,8 @@ async function getDocsTree(dir: string, link: string): Promise<DocsNode> {
     if (d.name.startsWith('.')) continue;
 
     const entry = path.join(dir, d.name);
+
+    if (d.name === 'public') continue;
 
     if (d.isDirectory()) {
       children.push(await getDocsTree(entry, `${link}${link.endsWith('/') ? '' : '/'}${d.name}`));

@@ -9,7 +9,8 @@ const iconCache = new Map<string, SVGElement>();
  */
 export async function resolveIcon(src: string): Promise<SVGElement> {
   if (iconCache.has(src)) {
-    return iconCache.get(src)!.cloneNode() as SVGElement;
+    console.log('cache hit');
+    return iconCache.get(src)!.cloneNode(true) as SVGElement;
   }
 
   const db = await DB;
@@ -35,8 +36,9 @@ export async function resolveIcon(src: string): Promise<SVGElement> {
           }
           const data = await response.text();
 
-          const transaction = db.transaction('icons', 'readwrite');
-          const store = transaction.objectStore('icons');
+          const tx = db.transaction('icon', 'readwrite');
+          const store = tx.objectStore('icon');
+
           store.put({ src, data });
 
           let svg = parseSvgElement(data);

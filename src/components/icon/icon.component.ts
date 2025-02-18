@@ -41,20 +41,20 @@ export default class Icon extends RosellaElement {
    * An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
    * can result in XSS attacks.
    */
-  @property() src?: string;
+  @property({ reflect: true }) src?: string;
 
   protected firstUpdated(_changedProperties: PropertyValues): void {
-    if (this.name) {
-      this.setIcon();
-    }
+    this.setIcon();
   }
 
   private async resolveIcon(): Promise<SVGElement> {
-    let source: string = icons[this.name as keyof typeof icons];
+    if (this.src !== undefined) {
+      console.log(this.src);
 
-    if (source === undefined) {
-      return resolveIcon(this.src as string);
+      return resolveIcon(this.src);
     }
+
+    let source: string = icons[this.name as keyof typeof icons];
 
     const parser = new DOMParser();
 
@@ -71,6 +71,7 @@ export default class Icon extends RosellaElement {
 
   async setIcon() {
     this.svg = await this.resolveIcon();
+    console.log(this.svg);
   }
 
   render() {
