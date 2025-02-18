@@ -4,6 +4,7 @@ import styles from './icon.styles';
 import type { CSSResultGroup, HTMLTemplateResult, PropertyValues } from 'lit';
 import RosellaElement from '../../element/rosella-element.js';
 import icons from "./library";
+import { resolveIcon } from './store';
 
 const CACHEABLE_ERROR = Symbol();
 const RETRYABLE_ERROR = Symbol();
@@ -52,13 +53,7 @@ export default class Icon extends RosellaElement {
     let source: string = icons[this.name as keyof typeof icons];
 
     if (source === undefined) {
-      // let response = await window.fetch(`graph://localhost/icon/${this.name}`, { mode: "cors", headers: { "accept": "image/svg+xml" } });
-
-      // if (response.ok) {
-      //   source = await response.text();
-      // } else {
-      //   source = icons["notfound"] as string;
-      // }
+      return resolveIcon(this.src as string);
     }
 
     const parser = new DOMParser();
