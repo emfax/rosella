@@ -13,8 +13,10 @@ tag: 'ui-icon'
 ::: html-preview
 
 ```html
-<div class="mx-auto max-w-xs">
+<div class="flex mx-auto max-w-xs">
+  <ui-icon src="/icons/folder.svg" size="sm"></ui-icon>
   <ui-icon src="/icons/folder.svg"></ui-icon>
+  <ui-icon src="/icons/folder.svg" size="lg"></ui-icon>
 </div>
 ```
 

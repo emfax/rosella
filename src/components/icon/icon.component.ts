@@ -32,7 +32,7 @@ const iconCache = new Map<string, Promise<SVGResult>>();
 export default class Icon extends RosellaElement {
   static styles: CSSResultGroup = [styles];
 
-  @state() private svg: SVGElement | HTMLTemplateResult | null = null;
+  @state() private svg: SVGElement | null = null;
 
   /** The name of the icon to draw. Available names depend on the icon library being used. */
   @property({ reflect: true }) name?: string;
@@ -42,6 +42,9 @@ export default class Icon extends RosellaElement {
    * can result in XSS attacks.
    */
   @property({ reflect: true }) src?: string;
+
+  /** The icon's size. */
+  @property({ reflect: true }) size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
 
   protected firstUpdated(_changedProperties: PropertyValues): void {
     this.setIcon();
@@ -75,6 +78,10 @@ export default class Icon extends RosellaElement {
   }
 
   render() {
+    if (this.svg !== null) {
+      this.svg.classList.add(this.size);
+    }
+
     return this.svg;
   }
 }
