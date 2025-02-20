@@ -189,6 +189,39 @@
   --ui-duration-extra: 0.373s;
 }
 
+/* Element Styles */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid var(--color-base-300);
+  color: var(--color-base-600);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-normal);
+  padding-inline: var(--spacing-xs);
+  padding-block: var(--spacing-sm);
+  text-align: left;
+}
+
+th[data-type='number'] {
+  text-align: right;
+}
+
+td {
+  border-bottom: 1px solid var(--color-base-300);
+  color: var(--color-base-800);
+  padding-inline: var(--spacing-xs);
+  padding-block: var(--spacing-sm);
+}
+
+td[data-type='number'] {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
 /* Utility Classes */
 
 /* Colours */
@@ -256,6 +289,10 @@
 }
 
 /* Sizing */
+
+.min-w-xs {
+  min-width: var(--container-xs);
+}
 
 .max-w-xs {
   max-width: var(--container-xs);
