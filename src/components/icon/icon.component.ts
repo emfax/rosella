@@ -50,10 +50,14 @@ export default class Icon extends RosellaElement {
     this.setIcon();
   }
 
+  protected updated(changedProperties: PropertyValues): void {
+    if (changedProperties.has('src')) {
+      this.setIcon();
+    }
+  }
+
   private async resolveIcon(): Promise<SVGElement> {
     if (this.src !== undefined) {
-      console.log(this.src);
-
       return resolveIcon(this.src);
     }
 
@@ -74,7 +78,6 @@ export default class Icon extends RosellaElement {
 
   async setIcon() {
     this.svg = await this.resolveIcon();
-    console.log(this.svg);
   }
 
   render() {
